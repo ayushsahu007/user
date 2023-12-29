@@ -10,6 +10,9 @@ public class MyUser {
     private String name;
     private Integer age;
 
+
+    private String address;
+    private String number;
     public Long getId() {
         return id;
     }
@@ -50,7 +53,5 @@ public class MyUser {
         this.number = number;
     }
 
-    private String address;
-    private String number;
 
 }

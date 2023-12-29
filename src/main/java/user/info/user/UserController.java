@@ -11,10 +11,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/getAllUser")
-    public List<MyUser> getAllUser() {
-        return userService.getAllUser();
-    }
+
 
     @GetMapping("/getUser/{userid}")
     public MyUser getUser(@PathVariable Integer userid){
@@ -26,6 +23,11 @@ public class UserController {
         return userService.saveUser(user);
     }
 
+
+    @GetMapping("/getAllUser")
+    public List<MyUser> getAllUser() {
+        return userService.getAllUser();
+    }
 
 }
 

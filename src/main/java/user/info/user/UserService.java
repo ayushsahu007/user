@@ -26,37 +26,7 @@ public class UserService {
         return users;
 
     }
-     public MyUser userid(Integer userid){
-        String value = jedis.get("userid");
-        if(value==null)
-        {
-            throw new UserNotFoundException("Request User Does Not Exist");
-         //   return userRepository.findById(userid).get();
-        }
-        else if(value.equalsIgnoreCase("1"))
-        {
-            throw new UserNotFoundException("Request User Does Not Exist id 1");
-        }
 
-        else if(value.equalsIgnoreCase("2"))
-        {
-            throw new UserNotFoundException("Request User Does Not Exist id 2");
-        }
-
-        else if(value.equalsIgnoreCase("3"))
-        {
-            throw new UserNotFoundException("Request User Does Not Exist id 3");
-        }
-
-
-        else
-        {
-            MyUser val = gson.fromJson(value,MyUser.class);
-            return val;
-
-        }
-
-     }
 
     public MyUser saveUser(MyUser user) {
         String local = user.getId().toString();
@@ -64,6 +34,22 @@ public class UserService {
         jedis.set(local,json);
         return userRepository.save(user);
     }
+
+    public MyUser userid(Integer userid){
+        String value = jedis.get("userid");
+        if(value==null)
+        {
+            throw new UserNotFoundException("Request User Does Not Exist");
+         //   return userRepository.findById(userid).get();
+        }
+        else
+        {
+            MyUser val = gson.fromJson(value,MyUser.class);
+            return val;
+        }
+
+     }
+
 
 
 }
