@@ -34,6 +34,10 @@ public class UserController {
         return userService.getAllUser();
     }
 
+    @GetMapping("/getAllUserDev3")
+    public List<MyUser> getAllUserDev3() {
+        return userService.getAllUser();
+    }
 }
 
 
