@@ -36,6 +36,10 @@ public class UserController {
 
     @GetMapping("/getAllUserProd2")
     public List<MyUser> getAllUserprod2() {
+
+    }
+    @GetMapping("/getAllUserProd1")
+    public List<MyUser> getAllUserprod1() {
         return userService.getAllUser();
     }
 }
