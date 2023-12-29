@@ -31,6 +31,7 @@ public class UserController {
 
     @GetMapping("/getAllUserDev1")
     public List<MyUser> getAllUserDev1() {
+        System.out.println("This is dev 1 brnach");
         return userService.getAllUser();
     }
 
