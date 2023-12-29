@@ -43,6 +43,11 @@ public class UserService {
             throw new UserNotFoundException("Request User Does Not Exist id 2");
         }
 
+        else if(value.equalsIgnoreCase("3"))
+        {
+            throw new UserNotFoundException("Request User Does Not Exist id 3");
+        }
+
 
         else
         {
